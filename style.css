@@ -1051,7 +1051,7 @@ footer p {
     background-color: #fff;
 }
 
-.thumbnail {
+.single-inner .thumbnail {
     margin-bottom: 64px;
 }
 
