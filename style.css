@@ -1094,6 +1094,25 @@ footer p {
     font-size: 24px;
 }
 
+.comment-content {
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #fff;
+    border-radius: 10px;
+}
+
+.reply {
+    position: relative;
+}
+
+.comment-reply-link {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    padding: 10px 20px;
+    border: 1px solid #fff;
+}
+
 .comment-body {
     display: grid;
     grid-template-columns: 2fr 7fr 1fr;
