@@ -4,7 +4,6 @@
         <div class="inner">
             <div class="post-all">
                 <p class="archive-title">
-                    カテゴリー専用のページです。
                 </p>
                 <?php
                 if (have_posts()):
@@ -12,7 +11,7 @@
                         the_post();
                 ?>
 
-                        <?php get_template_part('template-parts/loop', 'post'); ?>
+                        <?php get_template_part('template-parts/post', 'loop'); ?>
 
                 <?php
                     endwhile;
