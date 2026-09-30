@@ -1153,8 +1153,33 @@ footer p {
     font-size: 20px;
 }
 
-.post-tag {
-    display: none;
+.posts article:first-child {
+    position: relative;
+}
+
+.posts article:first-child::before {
+    content: "NEW";
+    position: absolute;
+    top: -20px;
+    right: -38px;
+
+    width: 100px;
+    height: 100px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #0B1D3A;
+    font-size: 18px;
+    font-weight: bold;
+
+    background-color: #8FD3FF;
+    border: 5px solid #F8FAFC;
+    border-radius: 50%;
+
+    border-radius: 999px;
+    z-index: 2;
 }
 
 
