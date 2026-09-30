@@ -8,7 +8,8 @@
             <img src="<?php echo esc_url(get_theme_file_uri('/images/blogImage.png')); ?>" alt="">
         <?php endif; ?>
     </div>
-    <h3><a href="<?php the_permalink(); ?>"><?php the_excerpt(); ?></a></h3>
+    <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+    <p><?php the_excerpt(); ?></p>
     <p class="post-date">
         <time datetime="<?php echo get_the_date('Y-m-d'); ?>">
             <?php echo the_date('Y年n月j日'); ?>
