@@ -23,7 +23,7 @@
         </aside>
     </div>
 
-    <div class="category">
+    <div class="categorys">
         <h3>Category</h3>
         <ul>
             <?php
