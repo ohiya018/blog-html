@@ -986,6 +986,7 @@ footer p {
 }
 
 .post-title {
+    margin-top: 164px;
     padding-bottom: 32px;
     font-size: 48px;
     text-align: center;
@@ -1032,7 +1033,7 @@ footer p {
 
 .post-contents h2,
 .post-contents h3 {
-    margin: 0px;
+    width: 100%;
     text-align: left;
 }
 
@@ -1133,4 +1134,788 @@ footer p {
 .children article .comment-meta {
     border-left: 5px solid #fff;
     margin-left: 10px;
+}
+
+.post-contents {
+    font-size: 16px;
+}
+
+.post-contents h2 {
+    margin: 24px 0;
+    font-size: 32px;
+}
+
+.post-contents h3 {
+    font-size: 24px;
+}
+
+.post-contents h4 {
+    font-size: 20px;
+}
+
+.post-tag {
+    display: none;
+}
+
+
+/* =========================================================
+   Ohiya Blog - Brush Up
+   既存CSSの一番下に追加
+========================================================= */
+
+
+/* =========================================================
+   01. 基本
+========================================================= */
+
+:root {
+    --deep-blue: #0B1D3A;
+    --dark-blue: #061129;
+    --panel-blue: #123A5C;
+    --profile-blue: #17456B;
+    --water-blue: #8FD3FF;
+    --active-blue: #5AA9E6;
+    --white: #F8FAFC;
+    --star-yellow: #FFE082;
+}
+
+body {
+    line-height: 1.7;
+    overflow-wrap: break-word;
+}
+
+a {
+    transition:
+        color 0.25s ease,
+        background-color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--star-yellow);
+    outline-offset: 4px;
+}
+
+
+/* =========================================================
+   02. Header
+========================================================= */
+
+header {
+    background-color: rgba(17, 58, 91, 0.82);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.gnav ul {
+    align-items: center;
+}
+
+.gnav ul li {
+    border-bottom: 1px solid transparent;
+}
+
+.gnav ul li:hover {
+    border-bottom-color: transparent;
+}
+
+.gnav a {
+    display: inline-block;
+    padding: 4px 0;
+}
+
+
+/* =========================================================
+   03. Main Visual
+========================================================= */
+
+.mainvisual .lead {
+    pointer-events: none;
+}
+
+.mainvisual .lead p {
+    line-height: 1.5;
+}
+
+.mainvisual .lead .big {
+    margin: 0;
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+}
+
+.scroll {
+    width: auto;
+    min-width: 150px;
+}
+
+.scroll:hover {
+    color: #fff;
+    border-bottom: none;
+}
+
+
+/* =========================================================
+   04. Blog
+========================================================= */
+
+.Blog .inner {
+    gap: 32px;
+}
+
+.archives {
+    min-width: 0;
+}
+
+.archives h2 {
+    margin: 0;
+    line-height: 1.2;
+}
+
+
+/* =========================================================
+   05. 記事カード
+========================================================= */
+
+.archives .posts {
+    align-items: stretch;
+}
+
+.posts article {
+    min-width: 0;
+
+    border-radius: 4px;
+
+    box-shadow:
+        0 8px 24px rgba(0, 0, 0, 0.12);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.posts article:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 14px 32px rgba(0, 0, 0, 0.22);
+}
+
+.posts article a {
+    border-bottom: none;
+}
+
+.posts article img {
+    display: block;
+
+    aspect-ratio: 268 / 191;
+    object-fit: cover;
+
+    border-radius: 2px;
+}
+
+.posts article h3 {
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   06. タグ
+========================================================= */
+
+article .tags {
+    align-items: center;
+}
+
+.tags a {
+    display: inline-block;
+
+    border-radius: 3px;
+
+    transition:
+        color 0.25s ease,
+        background-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.tags a:hover {
+    color: var(--deep-blue);
+
+    background-color: var(--active-blue);
+
+    border-bottom: none;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   07. NEW
+========================================================= */
+
+.new {
+    z-index: 2;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================================================
+   08. Pagination
+========================================================= */
+
+.pages .page a,
+.pages .page span {
+    flex-shrink: 0;
+}
+
+.pages .page a:hover {
+    color: var(--deep-blue);
+
+    background-color: var(--active-blue);
+
+    border-color: var(--active-blue);
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   09. Category / Archive Page
+========================================================= */
+
+/*
+    category.php / archive.php
+
+    <div class="category-heading">
+        <span>CATEGORY</span>
+        <h2>カテゴリー名</h2>
+    </div>
+
+    というHTMLを想定
+*/
+
+.category-page .archives,
+.archive-page .archives {
+    min-width: 0;
+}
+
+
+/* 見出し全体 */
+
+.category-heading {
+    position: relative;
+
+    margin-bottom: 45px;
+
+    padding: 110px 0 30px;
+
+    border-bottom:
+        1px solid rgba(143, 211, 255, 0.35);
+}
+
+
+/* 下の水色ライン */
+
+.category-heading::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -1px;
+
+    width: 80px;
+    height: 3px;
+
+    background-color: var(--water-blue);
+}
+
+
+/* CATEGORY */
+
+.category-heading span {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: var(--water-blue);
+
+    font-size: 14px;
+    font-weight: bold;
+
+    letter-spacing: 0.2em;
+
+    line-height: 1.4;
+}
+
+
+/* カテゴリー名 */
+
+.category-heading h2 {
+    margin: 0;
+    padding: 0;
+
+    color: var(--white);
+
+    font-size: clamp(40px, 4.5vw, 64px);
+    font-weight: bold;
+
+    line-height: 1.2;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* カテゴリー記事一覧 */
+
+.category-page .posts,
+.archive-page .posts {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   10. Category / Archive の記事カード
+========================================================= */
+
+.category-page .posts article,
+.archive-page .posts article {
+    height: 100%;
+}
+
+
+/* =========================================================
+   11. Sidebar
+========================================================= */
+
+.profile,
+.searchform,
+.categorys,
+.archivement {
+    border-radius: 4px;
+}
+
+.categorys a,
+.archivement a {
+    display: inline-block;
+
+    text-underline-offset: 5px;
+}
+
+.categorys a:hover,
+.archivement a:hover {
+    color: var(--star-yellow);
+
+    border-bottom-color: transparent;
+}
+
+
+/* =========================================================
+   12. Profile
+========================================================= */
+
+.profile {
+    box-shadow:
+        0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================================================
+   13. Category Sidebar
+========================================================= */
+
+.categorys li,
+.archivement li {
+    line-height: 1.5;
+}
+
+.categorys a,
+.archivement a {
+    position: relative;
+}
+
+
+/* ホバー時に少し右へ */
+
+.categorys a:hover,
+.archivement a:hover {
+    transform: translateX(4px);
+}
+
+
+/* =========================================================
+   14. Page Top
+========================================================= */
+
+.pagetop {
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease,
+        background-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.pagetop:hover {
+    border-bottom: none;
+}
+
+
+/* =========================================================
+   15. Footer
+========================================================= */
+
+footer .fnav ul li {
+    border-bottom: 1px solid transparent;
+}
+
+footer .fnav ul li:hover {
+    border-bottom-color: transparent;
+}
+
+footer .fnav a {
+    display: inline-block;
+}
+
+
+/* =========================================================
+   16. 記事本文
+========================================================= */
+
+.post-contents {
+    font-size: 16px;
+    line-height: 1.9;
+
+    overflow-wrap: anywhere;
+}
+
+.post-contents p {
+    margin: 0 0 1.6em;
+}
+
+.post-contents h2 {
+    margin: 2.2em 0 1em;
+
+    font-size: 32px;
+    line-height: 1.4;
+}
+
+.post-contents h3 {
+    margin: 1.8em 0 0.8em;
+
+    font-size: 24px;
+    line-height: 1.5;
+}
+
+.post-contents ul,
+.post-contents ol {
+    margin: 0 0 1.6em 1.5em;
+
+    padding-left: 1em;
+
+    list-style: revert;
+}
+
+.post-contents li {
+    margin-bottom: 0.5em;
+}
+
+.post-contents img {
+    height: auto;
+
+    border-radius: 3px;
+}
+
+
+/* =========================================================
+   17. 記事内テーブル
+========================================================= */
+
+.post-contents table {
+    width: 100%;
+
+    margin: 2em 0;
+
+    border-collapse: collapse;
+}
+
+.post-contents th,
+.post-contents td {
+    padding: 12px;
+
+    border: 1px solid rgba(248, 250, 252, 0.35);
+
+    text-align: left;
+}
+
+
+/* =========================================================
+   18. コメント
+========================================================= */
+
+#commentform input,
+#commentform textarea {
+    max-width: 100%;
+
+    border: 1px solid rgba(248, 250, 252, 0.5);
+
+    border-radius: 3px;
+}
+
+#commentform input:focus,
+#commentform textarea:focus {
+    border-color: var(--water-blue);
+}
+
+
+/* =========================================================
+   19. Tablet
+========================================================= */
+
+@media screen and (max-width: 1024px) {
+
+    .Blog .inner {
+        grid-template-columns:
+            minmax(0, 2fr) minmax(220px, 1fr);
+
+        gap: 24px;
+    }
+
+    .archives {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .archives .posts {
+        column-gap: 28px;
+    }
+
+    .profile,
+    .categorys,
+    .archivement {
+        padding-left: 22px;
+        padding-right: 22px;
+    }
+
+    .profile h4 {
+        font-size: 30px;
+    }
+
+    .post-contents,
+    .post-info,
+    #commentform {
+        margin-left: 48px;
+        margin-right: 48px;
+    }
+
+    .category-heading {
+        padding-top: 90px;
+    }
+}
+
+
+/* =========================================================
+   20. Mobile
+========================================================= */
+
+@media screen and (max-width: 740px) {
+
+    /* Blog */
+
+    .Blog .inner {
+        display: block;
+    }
+
+    .archives {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+
+    /* 記事一覧 */
+
+    .archives .posts {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Category */
+
+    .category-heading {
+        margin-bottom: 30px;
+
+        padding:
+            80px 0 25px;
+    }
+
+    .category-heading h2 {
+        font-size: clamp(34px, 8vw, 44px);
+    }
+
+
+    /* About */
+
+    .about {
+        padding-top: 50px;
+    }
+
+
+    /* 記事 */
+
+    .single-inner {
+        width: 90%;
+    }
+
+    .post-title {
+        margin-top: 120px;
+
+        font-size: clamp(30px, 7vw, 40px);
+
+        line-height: 1.35;
+    }
+
+    .post-contents,
+    .post-info,
+    #commentform {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .post-contents {
+        font-size: 16px;
+    }
+
+    .post-contents h2 {
+        font-size: 27px;
+    }
+
+    .post-contents h3 {
+        font-size: 21px;
+    }
+
+
+    /* コメント */
+
+    .comment-body {
+        grid-template-columns: 1fr;
+
+        padding: 16px;
+    }
+
+    .comment-author img {
+        width: 64px;
+        height: 64px;
+
+        margin: 0 auto;
+
+        border-radius: 50%;
+
+        object-fit: cover;
+    }
+
+    .comment-content {
+        margin:
+            10px 0;
+    }
+
+
+    /* Footer */
+
+    footer .inner {
+        gap: 28px;
+    }
+}
+
+
+/* =========================================================
+   21. 390px
+========================================================= */
+
+@media screen and (max-width: 390px) {
+
+    /* Category */
+
+    .category-heading {
+        padding:
+            60px 0 22px;
+    }
+
+    .category-heading span {
+        margin-bottom: 8px;
+
+        font-size: 12px;
+    }
+
+    .category-heading h2 {
+        font-size: 34px;
+    }
+
+
+    /* Article */
+
+    .posts article img {
+        margin-bottom: 18px;
+    }
+
+
+    /* Pagination */
+
+    .pages .page a,
+    .pages .page span {
+        width: 44px;
+        height: 44px;
+
+        font-size: 15px;
+    }
+
+
+    /* Single */
+
+    .post-title {
+        margin-top: 100px;
+
+        padding-bottom: 24px;
+    }
+
+    .post-date {
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+
+    /* Table */
+
+    .post-contents table {
+        display: block;
+
+        overflow-x: auto;
+
+        white-space: nowrap;
+    }
+}
+
+
+/* =========================================================
+   22. アニメーションを減らしたい環境への配慮
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }

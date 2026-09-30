@@ -51,7 +51,7 @@ add_filter('document_title_separator', 'mytheme_change_title_separator');
  */
 function mytheme_custom_excerpt_length($length)
 {
-    return 10; // 10文字に変更
+    return 20; // 20文字に変更
 }
 // 第3引数の「999」は実行の優先順位（他の設定より確実に優先させるため）
 add_filter('excerpt_length', 'mytheme_custom_excerpt_length', 999);
