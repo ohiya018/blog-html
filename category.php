@@ -1,41 +1,42 @@
 <?php get_header(); ?>
 <main>
-    <div class="contents">
-        <div class="inner">
-            <div class="post-all">
-                <p class="archive-title">
-                </p>
-                <?php
-                if (have_posts()):
-                    while (have_posts()):
-                        the_post();
-                ?>
+    <div class="inner">
+        <p class="archive-title">
+            <!-- カテゴリー名 -->
 
-                        <?php get_template_part('template-parts/post', 'loop'); ?>
-
-                <?php
-                    endwhile;
-                endif;
-                ?>
-
-                <div class="nav-page">
-                    <?php
-                    # argument(引数)
-                    $arg = array(
-                        'prev_text' => '<',
-                        'next_text' => '>',
-                        'type' => 'list',
-                        'mid_size' => 1
-                    );
-
-                    the_posts_pagination($arg);
-                    ?>
-                </div>
-            </div>
-            <div class="sidebar">
-                <?php get_sidebar(); ?>
-            </div>
-        </div>
+            <?php if (is_category()): ?>
+                <?php single_cat_title(); ?>の記事一覧
+            <?php elseif (is_tag()): ?>
+                <?php single_tag_title(); ?>の記事一覧
+            <?php elseif (is_month()): ?>
+                <?php the_time('Y年n月'); ?>の記事一覧
+            <?php elseif (is_search()): ?>
+                「<?php echo get_search_query(); ?>」の検索結果
+            <?php else: ?>
+                過去の記事一覧
+            <?php endif; ?>
+        </p>
     </div>
+
+    <section class="Blog" id="blog">
+        <!-- 記事一覧 -->
+        <div class="inner">
+            <div class="archives">
+                <div class="posts">
+                    <?php
+                    if (have_posts()):
+                        while (have_posts()):
+                            the_post();
+                            get_template_part('template-parts/post', 'loop');
+                        endwhile; ?>
+                </div>
+            <?php
+                        get_template_part('template-parts/posts', 'pages');
+                    endif;
+            ?>
+            </div>
+            <?php get_sidebar(); ?>
+        </div>
+    </section>
 </main>
 <?php get_footer(); ?>
