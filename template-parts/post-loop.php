@@ -1,5 +1,4 @@
-<article class="is-new">
-    <span class="new">NEW</span>
+<article>
     <div class="thumbnail">
         <?php
         if (has_post_thumbnail()):
